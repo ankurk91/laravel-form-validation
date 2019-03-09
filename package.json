@@ -1,0 +1,62 @@
+{
+  "name": "laravel-form-validation",
+  "version": "0.1.0",
+  "description": "laravel-form-validation",
+  "main": "dist/index.js",
+  "browser": "dist/index.min.js",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankurk91/laravel-form-validation.git"
+  },
+  "keywords": [
+    "vue",
+    "axios",
+    "laravel",
+    "validation"
+  ],
+  "author": "ankurk91",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ankurk91/laravel-form-validation/issues"
+  },
+  "homepage": "https://github.com/ankurk91/laravel-form-validation",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "yarn run test --watch --notify",
+    "build": "cross-env NODE_ENV=production webpack --progress --mode production",
+    "prepublishOnly": "yarn run test && yarn run build"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "object-to-formdata": "^1.6.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "axios-mock-adapter": "^1.16.0",
+    "babel-jest": "^24.1.0",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^2.0.0",
+    "cross-env": "^5.2.0",
+    "jest": "^24.1.0",
+    "unminified-webpack-plugin": "^2.0.0",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
+  },
+  "peerDependencies": {},
+  "engines": {
+    "node": ">=6.9.0",
+    "npm": ">=3.10.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "collectCoverage": true,
+    "testURL": "http://localhost"
+  }
+}
