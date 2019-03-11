@@ -7,7 +7,7 @@
 [![build-status](https://travis-ci.org/ankurk91/laravel-form-validation.svg?branch=master)](https://travis-ci.org/ankurk91/laravel-form-validation)
 [![codecov](https://codecov.io/gh/ankurk91/laravel-form-validation/branch/master/graph/badge.svg)](https://codecov.io/gh/ankurk91/laravel-form-validation)
 
-Yet another form validation helper for Laravel.
+This package make use of AJAX to validate your form with backend logic.
 
 ## Installation
 ```bash
@@ -19,10 +19,106 @@ yarn add laravel-form-validation
 ```
 
 ## Usage
+Using Vue.js and Bootstrap
+```html
+<template>
+    <form @submit.prevent="submit">
 
-## Methods
+        <!-- Display a global message if there is any errors -->
+        <div class="alert alert-danger my-3" v-show="form.$errors.any()">
+            Please check the form and try again!
+        </div>
+        
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" 
+                class="form-control" 
+                v-model="user.name" 
+                :class="{ 'is-invalid': form.$errors.has('name') }"
+                @keyup="form.$errors.clear('name')">
+            
+            <!-- Display first error for a field -->
+            <div class="invalid-feedback" v-show="form.$errors.has('name')">
+              {{ form.$errors.first('name') }}
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Avatar</label>
+            <div class="custom-file">
+                
+                <!-- Transform File object to FormData automatically -->
+                <input type="file"                                       
+                    id="input-avatar" 
+                    accept="image/*"
+                    :class="{ 'is-invalid': form.$errors.has('name') }"
+                    @change="user.avatar = $event.target.files[0]">
+                <label class="custom-file-label" for="input-avatar">Choose image...</label>
+                
+                <!-- Display all errors for a field -->
+                <div class="invalid-feedback" v-show="form.$errors.has('avatar')">
+                  <div v-for="message in form.$errors.get('name')">{{ message }}</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Get upload progress percentage using form.$progress -->
+        <div class="progress">
+            <div class="progress-bar" :style="{ width: form.$progress + '%' }">{{ form.$progress }}%</div>
+        </div>    
+        
+        <!-- Prevent re-submit using form.$pending -->
+        <button type="submit" :disabled="form.$pending">Submit</button>
+    </form>
+</template>
+
+<script>
+import Form from 'laravel-form-validation';
+
+export default {
+    data() {
+        return {
+            user: {name: 'Joy', avatar: null},
+            form: new Form()
+        }
+    },
+
+    methods: {
+        submit() {
+            this.form.post('/profile', this.user)
+                .then(data => {
+                    // This is the data returned from your server
+                    console.log(data);
+                })
+                .catch(error => {
+                    // Handle errors
+                });
+        }
+    }
+}
+</script>
+```
+
+## API
+You can take a look at individual classes
+* [Form](./src/Form.js)
+* [Errors](./src/Errors.js)
+
+## Customize `axios` instance
+The package uses [axios](https://github.com/axios/axios) for making AJAX requests, 
+you can pass your own axios instance and Form class will start using it.
+```js
+// app.js
+import axios from 'axios';
+import Form from 'laravel-form-validation';
+
+axios.defaults.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
+axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+Form.$defaults.axios = axios;
+```
 
 ### Attribution
+This package is highly inspired by various other similar implementations:
 * [form-backend-validation](https://github.com/spatie/form-backend-validation)
 * [form-object](https://github.com/sahibalejandro/form-object)
 * [vform](https://github.com/cretueusebiu/vform)
