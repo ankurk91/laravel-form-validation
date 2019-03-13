@@ -4,7 +4,7 @@
 [![npm-version](https://img.shields.io/npm/v/laravel-form-validation.svg)](https://www.npmjs.com/package/laravel-form-validation)
 [![github-tag](https://img.shields.io/github/tag/ankurk91/laravel-form-validation.svg?maxAge=1800)](https://github.com/ankurk91/laravel-form-validation/)
 [![license](https://img.shields.io/github/license/ankurk91/laravel-form-validation.svg?maxAge=1800)](https://yarnpkg.com/en/package/laravel-form-validation)
-[![build-status](https://travis-ci.org/ankurk91/laravel-form-validation.svg?branch=master)](https://travis-ci.org/ankurk91/laravel-form-validation)
+[![build-status](https://travis-ci.com/ankurk91/laravel-form-validation.svg?branch=master)](https://travis-ci.com/ankurk91/laravel-form-validation)
 [![codecov](https://codecov.io/gh/ankurk91/laravel-form-validation/branch/master/graph/badge.svg)](https://codecov.io/gh/ankurk91/laravel-form-validation)
 
 This package make use of AJAX to validate your form with backend logic.
