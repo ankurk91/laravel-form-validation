@@ -2,8 +2,7 @@
   "name": "laravel-form-validation",
   "version": "0.1.0",
   "description": "laravel-form-validation",
-  "main": "dist/index.js",
-  "browser": "dist/index.min.js",
+  "main": "dist/Form.js",
   "files": [
     "src",
     "dist"
