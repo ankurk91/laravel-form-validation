@@ -100,7 +100,7 @@ export default {
 ```
 
 ## API
-You can take a look at individual classes
+You can take a look at individual classes and their methods
 * [Form](./src/Form.js)
 * [Errors](./src/Errors.js)
 
@@ -124,7 +124,7 @@ This package is highly inspired by various other similar implementations:
 * [vform](https://github.com/cretueusebiu/vform)
 
 ## Testing
-* This package is using [Jest](https://github.com/facebook/jest) 
+* This package is using [Jest](https://github.com/facebook/jest) for testing.
 * Tests can be found in `__test__` folder.
 * Execute tests with this command `yarn test`
 
