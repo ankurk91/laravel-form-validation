@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Errors from './Errors';
-import objectToFormData from 'object-to-formdata';
+import objectToFormData from 'object-to-formdata/dist/umd.js';
 
 class Form {
   /**

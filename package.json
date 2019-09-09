@@ -30,8 +30,8 @@
     "prepublishOnly": "yarn run test && yarn run build"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "object-to-formdata": "^1.6.4"
+    "axios": "^0.19.0",
+    "object-to-formdata": "^2.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -39,7 +39,7 @@
     "axios-mock-adapter": "^1.16.0",
     "babel-jest": "^24.1.0",
     "babel-loader": "^8.0.5",
-    "clean-webpack-plugin": "^2.0.0",
+    "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^5.2.0",
     "jest": "^24.1.0",
     "unminified-webpack-plugin": "^2.0.0",
