@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Errors from './Errors';
-import { objectToFormData } from 'object-to-formdata';
+import {objectToFormData} from 'object-to-formdata';
 
 class Form {
   /**
@@ -87,7 +87,10 @@ class Form {
     this.$pending = true;
 
     if (this.hasFile(formData)) {
-      formData = objectToFormData(formData, {indices: true});
+      formData = objectToFormData(formData, {
+        indices: true,
+        booleansAsIntegers: true
+      });
 
       // Form Method Spoofing is needed to send files using PUT/PATCH/DELETE.
       // https://laravel.com/docs/routing#form-method-spoofing
