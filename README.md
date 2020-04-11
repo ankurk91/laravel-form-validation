@@ -4,7 +4,7 @@
 [![npm-version](https://badgen.net/npm/v/laravel-form-validation)](https://www.npmjs.com/package/laravel-form-validation)
 [![github-tag](https://badgen.net/github/tag/ankurk91/laravel-form-validation)](https://github.com/ankurk91/laravel-form-validation/)
 [![license](https://badgen.net/github/license/ankurk91/laravel-form-validation)](https://yarnpkg.com/en/package/laravel-form-validation)
-[![build-status](https://travis-ci.com/ankurk91/laravel-form-validation.svg?branch=master)](https://travis-ci.com/ankurk91/laravel-form-validation)
+[![build-status](https://github.com/ankurk91/laravel-form-validation/workflows/.github/workflows/nodejs.yml/badge.svg)](https://github.com/ankurk91/laravel-form-validation/actions)
 [![codecov](https://codecov.io/gh/ankurk91/laravel-form-validation/branch/master/graph/badge.svg)](https://codecov.io/gh/ankurk91/laravel-form-validation)
 
 This package make use of AJAX to validate your form with backend logic.
@@ -14,12 +14,12 @@ This package make use of AJAX to validate your form with backend logic.
 # npm
 npm install laravel-form-validation 
 
-# Yarn
+# yarn
 yarn add laravel-form-validation
 ```
 
 ## Usage
-Using Vue.js and Bootstrap
+An example using Vue.js and Bootstrap
 ```html
 <template>
     <form @submit.prevent="submit">
@@ -104,7 +104,7 @@ You can take a look at individual classes and their methods
 * [Form](./src/Form.js)
 * [Errors](./src/Errors.js)
 
-## Customize `axios` instance
+## Customize `axios` instance (optional)
 The package uses [axios](https://github.com/axios/axios) for making AJAX requests, 
 you can pass your own axios instance and Form class will start using it.
 ```js
