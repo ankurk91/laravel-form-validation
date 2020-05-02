@@ -47,11 +47,11 @@ An example using Vue.js and Bootstrap
             <label>Avatar</label>
             <div class="custom-file">
                 
-                <!-- Transform File object to FormData automatically -->
+                <!-- Transform File object to FormData() automatically -->
                 <input type="file"                                       
                     id="input-avatar" 
                     accept="image/*"
-                    :class="{ 'is-invalid': form.$errors.has('name') }"
+                    :class="{ 'is-invalid': form.$errors.has('avatar') }"
                     @change="user.avatar = $event.target.files[0]">
                 <label class="custom-file-label" for="input-avatar">Choose image...</label>
                 
@@ -62,8 +62,8 @@ An example using Vue.js and Bootstrap
             </div>
         </div>
         
-        <!-- Get upload progress percentage using form.$progress -->
-        <div class="progress">
+        <!-- Get file upload progress percentage using form.$progress -->
+        <div class="progress" v-show="form.$pending">
             <div class="progress-bar" :style="{ width: form.$progress + '%' }">{{ form.$progress }}%</div>
         </div>    
         
@@ -86,9 +86,9 @@ export default {
     methods: {
         submit() {
             this.form.post('/profile', this.user)
-                .then(data => {
+                .then(response => {
                     // This is the data returned from your server
-                    console.log(data);
+                    console.log(response);
                 })
                 .catch(error => {
                     // Handle errors
@@ -104,6 +104,30 @@ You can take a look at individual classes and their methods
 * [Form](./src/Form.js)
 * [Errors](./src/Errors.js)
 
+## Vue.js helpers
+This package comes with two helpers to work with [bootstrap css](https://getbootstrap.com/docs/4.1/components/forms/#how-it-works)
+### IsInvalid Directive
+Setup global directive
+```js
+import { IsInvalidDirective } from 'laravel-form-validation';
+Vue.component('invalid', IsInvalidDirective);
+```
+Use in form inputs, you must specify `name` attribute on your input fields
+```html
+<input type="email" v-invalid="form.$errors" name="email">
+```
+
+### FieldError component
+Setup global component
+```js
+import { FieldErrorComponent } from 'laravel-form-validation';
+Vue.component(FieldErrorComponent.name, FieldErrorComponent);
+```
+Use in forms
+```html
+<field-error :bag="form.$errors" field="email"></field-error>
+```
+
 ## Customize `axios` instance (optional)
 The package uses [axios](https://github.com/axios/axios) for making AJAX requests, 
 you can pass your own axios instance and Form class will start using it.
@@ -111,7 +135,7 @@ you can pass your own axios instance and Form class will start using it.
 // app.js
 import axios from 'axios';
 import Form from 'laravel-form-validation';
-
+// Make your modifications
 axios.defaults.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 Form.$defaults.axios = axios;

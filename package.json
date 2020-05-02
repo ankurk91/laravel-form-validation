@@ -2,7 +2,8 @@
   "name": "laravel-form-validation",
   "version": "0.3.0",
   "description": "Yet another form validation helper for Laravel",
-  "main": "dist/Form.js",
+  "main": "dist/index.js",
+  "browser": "dist/index.min.js",
   "files": [
     "src",
     "dist"
@@ -15,6 +16,7 @@
     "vue",
     "axios",
     "laravel",
+    "error",
     "validation"
   ],
   "author": "ankurk91",
@@ -36,6 +38,7 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
+    "@vue/test-utils": "^1.0.0-beta.33",
     "axios-mock-adapter": "^1.18.1",
     "babel-jest": "^25.3.0",
     "babel-loader": "^8.1.0",
@@ -43,6 +46,8 @@
     "cross-env": "^7.0.2",
     "jest": "^25.3.0",
     "unminified-webpack-plugin": "^2.0.0",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },

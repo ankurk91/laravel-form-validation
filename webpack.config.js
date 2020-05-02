@@ -17,15 +17,12 @@ module.exports = {
     },
     extensions: ['.js', '.json', '.vue']
   },
-  entry: {
-    Form: './src/index.js',
-    Errors: './src/Errors.js',
-  },
+  entry: './src/index.js',
   externals: ['axios', 'object-to-formdata'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].min.js',
-    library: 'Laravel[name]',
+    filename: 'index.min.js',
+    library: 'LaravelForm',
     libraryTarget: 'umd',
     umdNamedDefine: true,
     // Workaround to fix umd build, restore webpack v3 behaviour
