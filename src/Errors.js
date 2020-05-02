@@ -65,6 +65,15 @@ class Errors {
   }
 
   /**
+   * Get all the errors in a flat array.
+   *
+   * @return {Array}
+   */
+  flatten () {
+    return Object.values(this.errors).reduce((a, b) => a.concat(b), [])
+  }
+
+  /**
    * Record the new errors.
    *
    * @param {Object} errors

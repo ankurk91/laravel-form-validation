@@ -108,4 +108,23 @@ describe('Errors class', () => {
     expect($errors.has('roles[1].name')).toBe(false);
   });
 
+  it('can flatten() all error messages', () => {
+    const messages = {
+      first_name: [
+        'First name is required',
+        'Field must be unique',
+      ],
+      email: [
+        'Email is required',
+      ]
+    };
+
+    $errors.record(messages);
+
+    const flatten = $errors.flatten();
+
+    expect(flatten.length).toEqual(3);
+    expect(flatten[0]).toEqual(messages.first_name[0]);
+  });
+
 });
