@@ -4,7 +4,7 @@
 [![npm-version](https://badgen.net/npm/v/laravel-form-validation)](https://www.npmjs.com/package/laravel-form-validation)
 [![github-tag](https://badgen.net/github/tag/ankurk91/laravel-form-validation)](https://github.com/ankurk91/laravel-form-validation/)
 [![license](https://badgen.net/github/license/ankurk91/laravel-form-validation)](https://yarnpkg.com/en/package/laravel-form-validation)
-![tests](https://github.com/ankurk91/laravel-form-validation/workflows/tests/badge.svg)
+[![tests](https://github.com/ankurk91/laravel-form-validation/workflows/tests/badge.svg)](https://github.com/ankurk91/laravel-form-validation/actions)
 [![codecov](https://codecov.io/gh/ankurk91/laravel-form-validation/branch/master/graph/badge.svg)](https://codecov.io/gh/ankurk91/laravel-form-validation)
 
 This package make use of AJAX to validate your form with backend logic.
@@ -19,7 +19,7 @@ yarn add laravel-form-validation
 ```
 
 ## Usage
-An example using Vue.js and Bootstrap
+An example using Vue.js and Bootstrap v4.x
 ```html
 <template>
     <form @submit.prevent="submit">
