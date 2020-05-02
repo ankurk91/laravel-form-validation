@@ -106,11 +106,11 @@ You can take a look at individual classes and their methods
 
 ## Vue.js helpers
 This package comes with two helpers to work with [bootstrap css](https://getbootstrap.com/docs/4.1/components/forms/#how-it-works)
-### IsInvalid Directive
+### IsInvalid directive
 Setup global directive
 ```js
 import { IsInvalidDirective } from 'laravel-form-validation';
-Vue.component('invalid', IsInvalidDirective);
+Vue.directive('invalid', IsInvalidDirective);
 ```
 Use in form inputs, you must specify `name` attribute on your input fields
 ```html
@@ -123,7 +123,7 @@ Setup global component
 import { FieldErrorComponent } from 'laravel-form-validation';
 Vue.component(FieldErrorComponent.name, FieldErrorComponent);
 ```
-Use in forms
+Use in forms to show validation message for specific field
 ```html
 <field-error :bag="form.$errors" field="email"></field-error>
 ```
