@@ -8,6 +8,13 @@ localVue.directive('invalid', IsInvalidDirective)
 
 const InputComponent = {
   name: 'EmailInput',
+  data() {
+    return {
+      errors: new Errors({
+        email: ['Email is required']
+      })
+    }
+  },
   render(el) {
     return el('input', {
       domProps: {
@@ -16,9 +23,7 @@ const InputComponent = {
       },
       directives: [{
         name: 'invalid',
-        value: new Errors({
-          email: ['Email is required']
-        })
+        value: this.errors
       }]
     })
   }
@@ -26,12 +31,16 @@ const InputComponent = {
 
 describe('Is-Invalid Directive', () => {
 
-  test('can add class to input', async () => {
+  test('can add/remove class to input', async () => {
     const wrapper = mount(InputComponent, {
       localVue
     });
     await wrapper.vm.$nextTick();
     expect(wrapper.classes('is-invalid')).toBe(true);
+
+    wrapper.vm.errors.clear();
+    await wrapper.vm.$nextTick();
+    expect(wrapper.classes('is-invalid')).toBe(false);
   });
 
 });
