@@ -11,11 +11,11 @@ This package make use of AJAX to validate your form with backend logic.
 
 ## Installation
 ```bash
-# npm
-npm install laravel-form-validation 
-
 # yarn
 yarn add laravel-form-validation
+
+# npm
+npm install laravel-form-validation 
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ An example using Vue.js and Bootstrap v4.x
 <template>
     <form @submit.prevent="submit">
 
-        <!-- Display a global message if there is any errors -->
+        <!-- Display a global message if there are any errors -->
         <div class="alert alert-danger my-3" v-show="form.$errors.any()">
             Please check the form and try again!
         </div>
@@ -112,7 +112,7 @@ Setup global directive
 import { IsInvalidDirective } from 'laravel-form-validation';
 Vue.directive('invalid', IsInvalidDirective);
 ```
-Use in form inputs, you must specify `name` attribute on your input fields
+Use on form inputs, you must specify `name` attribute on your input fields
 ```html
 <input type="email" v-invalid="form.$errors" name="email">
 ```
