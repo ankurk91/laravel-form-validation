@@ -76,26 +76,6 @@ describe('Form class', () => {
     await $form.put('http://localhost/profile', data);
   });
 
-  it('can detect if object/array has a file deeply', () => {
-    expect($form.hasFile({})).toBe(false);
-
-    expect($form.hasFile({
-      name: 'Foo'
-    })).toBe(false);
-
-    expect($form.hasFile({
-      avatar: new Blob([], {})
-    })).toBe(true);
-
-    expect($form.hasFile({
-      documents: [new File([], {})]
-    })).toBe(true);
-
-    expect($form.hasFile({
-      profile: {avatar: new File([], {})}
-    })).toBe(true);
-  });
-
   it('can directly call get() method', () => {
     const stub = jest.fn();
     $form.submit = stub;

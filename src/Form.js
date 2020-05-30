@@ -1,11 +1,11 @@
 import axios from 'axios';
 import Errors from './Errors';
+import {hasFile} from "./Util.js";
 import {objectToFormData} from 'object-to-formdata';
 
 class Form {
   /**
    * Create a new Form instance.
-   *
    * @return {Form}
    */
   constructor() {
@@ -86,7 +86,7 @@ class Form {
     this.$errors.clear();
     this.$pending = true;
 
-    if (this.hasFile(formData)) {
+    if (hasFile(formData)) {
       formData = objectToFormData(formData, {
         indices: true,
         booleansAsIntegers: true
@@ -102,7 +102,7 @@ class Form {
     }
 
     return new Promise((resolve, reject) => {
-      Form.$defaults.axios.request({url, method, data: formData, ...this.config(), ...config})
+      Form.$defaults.axios.request({url, method, data: formData, ...this.axiosConfig(), ...config})
         .then(response => {
           resolve(response.data);
         })
@@ -115,54 +115,12 @@ class Form {
   }
 
   /**
-   * Check if the given data contains any instance of File.
-   *
-   * @param  {Object} data
-   * @return {Boolean}
-   */
-  hasFile(data) {
-    for (let property in data) {
-      if (this.hasFileDeep(data[property])) {
-        return true;
-      }
-    }
-
-    return false;
-  }
-
-  /**
-   * Check if the given item is (or contains) a File.
-   *
-   * @param  {*} item
-   * @return {Boolean}
-   */
-  hasFileDeep(item) {
-    if (item instanceof Blob || item instanceof FileList) {
-      return true;
-    }
-
-    if (typeof item === 'object') {
-      for (let key in item) {
-        if (item.hasOwnProperty(key) && this.hasFileDeep(item[key])) {
-          return true;
-        }
-      }
-    }
-
-    if (Array.isArray(item)) {
-      return item.some(element => this.hasFileDeep(element));
-    }
-
-    return false;
-  }
-
-  /**
    * Returns the axios configuration object.
    *
    * @source https://github.com/axios/axios#request-config
    * @return {Object}
    */
-  config() {
+  axiosConfig() {
     return {
       onUploadProgress: event => {
         this.$progress = Math.round((event.loaded * 100) / event.total);
