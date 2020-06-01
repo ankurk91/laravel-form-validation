@@ -15,13 +15,23 @@ const hasFile = (data) => {
 }
 
 /**
+ * Determines if object is file.
+ *
+ * @param {Object} item
+ * @returns {boolean}
+ */
+const isFile = (item) => {
+  return item instanceof Blob || item instanceof FileList;
+}
+
+/**
  * Check if the given item is (or contains) a File.
  *
- * @param  {*} item
+ * @param  {Object|Array} item
  * @return {Boolean}
  */
 const hasFileDeep = (item) => {
-  if (item instanceof Blob || item instanceof FileList) {
+  if (isFile(item)) {
     return true;
   }
 
@@ -40,4 +50,4 @@ const hasFileDeep = (item) => {
   return false;
 }
 
-export {hasFile, hasFileDeep}
+export {hasFile, isFile, hasFileDeep}

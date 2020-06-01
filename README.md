@@ -19,7 +19,7 @@ npm install laravel-form-validation
 ```
 
 ## Usage
-An example using Vue.js and Bootstrap v4.x
+An example using Vue.js 2.x and Bootstrap v4.x
 ```html
 <template>
     <form @submit.prevent="submit">
@@ -106,6 +106,12 @@ You can take a look at individual classes and their methods
 
 ## Vue.js helpers
 This package comes with two helpers to work with [bootstrap css](https://getbootstrap.com/docs/4.1/components/forms/#how-it-works)
+### Register in one shot
+You can register the component and directive
+```js
+import {VueFormPlugin} from "laravel-form-validation";
+Vue.use(VueFormPlugin)
+```
 ### IsInvalid directive
 Setup global directive
 ```js
@@ -141,7 +147,7 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 Form.$defaults.axios = axios;
 ```
 
-### Attribution
+### Acknowledgements
 This package is highly inspired by various other similar implementations:
 * [form-backend-validation](https://github.com/spatie/form-backend-validation)
 * [form-object](https://github.com/sahibalejandro/form-object)

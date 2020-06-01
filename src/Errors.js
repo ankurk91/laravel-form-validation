@@ -20,7 +20,7 @@ class Errors {
   /**
    * Determine if messages exist for the given key.
    *
-   * @param {string} field
+   * @param {String} field
    * @return {Boolean}
    */
   has(field) {
