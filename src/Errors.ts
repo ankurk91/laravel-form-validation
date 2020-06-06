@@ -1,11 +1,14 @@
 class Errors {
+
+  private errors: { [key: string]: any };
+
   /**
    * Create a new Errors instance.
    *
    * @param {Object} errors
    */
-  constructor(errors = {}) {
-    this.record(errors);
+  constructor(errors: Object = {}) {
+    this.errors = errors;
   }
 
   /**
@@ -13,7 +16,7 @@ class Errors {
    *
    * @return {object}
    */
-  all() {
+  all(): Object {
     return this.errors;
   }
 
@@ -23,7 +26,7 @@ class Errors {
    * @param {String} field
    * @return {Boolean}
    */
-  has(field) {
+  has(field: string): Boolean {
     let hasError = this.errors.hasOwnProperty(field);
 
     if (!hasError) {
@@ -41,7 +44,7 @@ class Errors {
    * @param {String} field
    * @returns {String|null}
    */
-  first(field) {
+  first(field: string): String | null {
     return this.get(field)[0];
   }
 
@@ -51,7 +54,7 @@ class Errors {
    * @param {String} field
    * @returns {Array}
    */
-  get(field) {
+  get(field: string): Array<any> {
     return this.errors[field] || [];
   }
 
@@ -60,7 +63,7 @@ class Errors {
    *
    * @return {Boolean}
    */
-  any() {
+  any(): Boolean {
     return Object.keys(this.errors).length > 0;
   }
 
@@ -69,7 +72,7 @@ class Errors {
    *
    * @return {Array}
    */
-  flatten () {
+  flatten(): Array<any> {
     return Object.values(this.errors).reduce((a, b) => a.concat(b), [])
   }
 
@@ -78,7 +81,7 @@ class Errors {
    *
    * @param {Object} errors
    */
-  record(errors) {
+  record(errors: Object) {
     this.errors = errors;
   }
 
@@ -87,8 +90,8 @@ class Errors {
    *
    * @param {String?} field
    */
-  clear(field) {
-    let errors = {};
+  clear(field?: string) {
+    let errors: { [key: string]: any } = {};
 
     if (field) {
       // Prevent reactivity issues

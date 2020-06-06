@@ -1,8 +1,10 @@
-export default ($el, binding, vnode) => {
+import Errors from "../Errors";
+
+export default ($el: any, binding: any) => {
   /**
-   * @var Object $errors
+   * @var Errors $errors
    */
-  const $errors = binding.value;
+  const $errors: Errors = binding.value;
 
   if (!$el.attributes.name) {
     throw new Error('v-invalid directive requires `name` attribute on input.')

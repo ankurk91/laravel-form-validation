@@ -15,13 +15,24 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.runtime.esm.js'
     },
-    extensions: ['.js', '.json', '.vue']
+    extensions: ['.js', '.json', '.vue', '.tsx', '.ts']
   },
-  entry: './src/index.js',
-  externals: ['axios', 'object-to-formdata'],
+  entry: './src/index.ts',
+  externals: [
+    'axios',
+    'object-to-formdata',
+    {
+      'vue': {
+        commonjs: 'vue',
+        commonjs2: 'vue',
+        amd: 'vue',
+        root: 'Vue'
+      },
+    }
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index.min.js',
+    filename: 'index.umd.min.js',
     library: 'LaravelForm',
     libraryTarget: 'umd',
     umdNamedDefine: true,
@@ -32,10 +43,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-      },
+        test: /\.tsx?$/,
+        loader: require.resolve('ts-loader'),
+        options: {
+          transpileOnly: false,
+          experimentalWatchApi: true,
+          appendTsSuffixTo: [/\.vue$/]
+        },
+        exclude: /node_modules/
+      }
     ]
   },
   optimization: {

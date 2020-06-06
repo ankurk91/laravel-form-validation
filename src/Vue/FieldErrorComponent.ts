@@ -1,6 +1,9 @@
-export default {
+import Vue, {VNode, PropType} from 'vue'
+import Errors from "../Errors";
+
+export default Vue.extend({
   name: 'FieldError',
-  render(el) {
+  render(el: any): VNode {
     return this.hasError ? el('div', {
       class: this.className,
       domProps: {
@@ -10,7 +13,7 @@ export default {
   },
   props: {
     bag: {
-      type: Object,
+      type: Object as PropType<Errors>,
       required: true,
     },
     field: {
@@ -23,12 +26,12 @@ export default {
     }
   },
   computed: {
-    hasError() {
+    hasError(): Boolean {
       return this.bag.has(this.field)
     },
-    message() {
+    message(): String | null {
       return this.bag.first(this.field)
     }
   }
-}
+})
 

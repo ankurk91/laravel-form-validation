@@ -4,7 +4,7 @@
  * @param  {Object} data
  * @return {Boolean}
  */
-const hasFile = (data) => {
+const hasFile = (data: { [key: string]: any }): Boolean => {
   for (let property in data) {
     if (hasFileDeep(data[property])) {
       return true;
@@ -20,7 +20,7 @@ const hasFile = (data) => {
  * @param {Object} item
  * @returns {boolean}
  */
-const isFile = (item) => {
+const isFile = (item: any): Boolean => {
   return item instanceof Blob || item instanceof FileList;
 }
 
@@ -30,7 +30,7 @@ const isFile = (item) => {
  * @param  {Object|Array} item
  * @return {Boolean}
  */
-const hasFileDeep = (item) => {
+const hasFileDeep = (item: any): Boolean => {
   if (isFile(item)) {
     return true;
   }

@@ -2,7 +2,9 @@
   "name": "laravel-form-validation",
   "version": "1.1.0",
   "description": "Yet another form validation helper for Laravel",
-  "main": "dist/index.js",
+  "main": "dist/index.umd.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/types/index.d.ts",
   "files": [
     "src",
     "dist"
@@ -27,7 +29,9 @@
   "scripts": {
     "test": "jest",
     "test:watch": "yarn run test --watch --notify",
-    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "build:esm": "tsc -m es6 --outDir ./dist/esm",
+    "build:umd": "cross-env NODE_ENV=production webpack --mode production",
+    "build": "npm run build:umd && npm run build:esm",
     "prepublishOnly": "yarn run test && yarn run build"
   },
   "dependencies": {
@@ -35,15 +39,13 @@
     "object-to-formdata": "^3.0.9"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
     "@vue/test-utils": "^1.0.2",
     "axios-mock-adapter": "^1.18.1",
-    "babel-jest": "^26.0.1",
-    "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^7.0.2",
     "jest": "^26.0.1",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5",
     "unminified-webpack-plugin": "^2.0.0",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11",

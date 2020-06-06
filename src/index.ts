@@ -1,10 +1,11 @@
-import Form from './Form.js';
-import Errors from './Errors.js'
-import FieldErrorComponent from "./Vue/FieldErrorComponent.js";
-import IsInvalidDirective from "./Vue/IsInvalidDirective.js";
+import Form from './Form';
+import Errors from './Errors'
+import FieldErrorComponent from "./Vue/FieldErrorComponent";
+import IsInvalidDirective from "./Vue/IsInvalidDirective";
+import {VueConstructor} from "vue";
 
 const VueFormPlugin = {
-  install(Vue, options) {
+  install(Vue: VueConstructor) {
     Vue.directive('invalid', IsInvalidDirective);
     Vue.component(FieldErrorComponent.name, FieldErrorComponent);
   }

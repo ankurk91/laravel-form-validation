@@ -1,9 +1,15 @@
-import axios from 'axios';
+import axios, {AxiosError, AxiosRequestConfig, AxiosResponse, Method} from 'axios';
 import Errors from './Errors';
-import {hasFile} from "./Util.js";
+import {hasFile} from "./Util";
 import {objectToFormData} from 'object-to-formdata';
 
 class Form {
+
+  public static $defaults: Object | any;
+  public $progress: Number;
+  public $pending: Boolean;
+  public $errors: Errors;
+
   /**
    * Create a new Form instance.
    * @return {Form}
@@ -21,7 +27,7 @@ class Form {
    * @param {Object} params
    * @returns {Promise}
    */
-  get(url, params = {}) {
+  get(url: string, params: Object = {}): Promise<any> {
     return this.submit('get', url, {}, {params});
   }
 
@@ -32,7 +38,7 @@ class Form {
    * @param {Object} data
    * @returns {Promise}
    */
-  post(url, data = {}) {
+  post(url: string, data: Object = {}): Promise<any> {
     return this.submit('post', url, data);
   }
 
@@ -43,7 +49,7 @@ class Form {
    * @param {Object} data
    * @returns {Promise}
    */
-  patch(url, data = {}) {
+  patch(url: string, data: Object = {}): Promise<any> {
     return this.submit('patch', url, data);
   }
 
@@ -54,7 +60,7 @@ class Form {
    * @param {Object} data
    * @returns {Promise}
    */
-  put(url, data = {}) {
+  put(url: string, data: Object = {}): Promise<any> {
     return this.submit('put', url, data);
   }
 
@@ -65,7 +71,7 @@ class Form {
    * @param {Object} data
    * @returns {Promise}
    */
-  delete(url, data = {}) {
+  delete(url: string, data: Object = {}): Promise<any> {
     return this.submit('delete', url, data);
   }
 
@@ -78,7 +84,7 @@ class Form {
    * @param  {Object} config
    * @return {Promise}
    */
-  submit(method, url, data = {}, config = {}) {
+  submit(method: string, url: string, data: any = {}, config: AxiosRequestConfig = {}): Promise<any> {
     let formData = data;
     method = method.toLowerCase();
 
@@ -102,11 +108,16 @@ class Form {
     }
 
     return new Promise((resolve, reject) => {
-      Form.$defaults.axios.request({url, method, data: formData, ...this.axiosConfig(), ...config})
-        .then(response => {
+      Form.$defaults.axios.request({
+        url,
+        method,
+        data: formData,
+        ...this.axiosConfig(), ...config
+      })
+        .then((response: AxiosResponse) => {
           resolve(response.data);
         })
-        .catch(error => {
+        .catch((error: AxiosError) => {
           this.onFail(error);
           reject(error);
         })
@@ -120,9 +131,9 @@ class Form {
    * @source https://github.com/axios/axios#request-config
    * @return {Object}
    */
-  axiosConfig() {
+  axiosConfig(): AxiosRequestConfig {
     return {
-      onUploadProgress: event => {
+      onUploadProgress: (event: any) => {
         this.$progress = Math.round((event.loaded * 100) / event.total);
       }
     }
@@ -131,9 +142,9 @@ class Form {
   /**
    * Handle a error response.
    *
-   * @param  {Object} error
+   * @param  {AxiosError} error
    */
-  onFail(error) {
+  onFail(error: AxiosError) {
     /* istanbul ignore else */
     if (error.response && error.response.status === 422) {
       this.$errors.record(error.response.data.errors);
