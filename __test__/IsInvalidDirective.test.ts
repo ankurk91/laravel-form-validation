@@ -1,12 +1,13 @@
-import {mount, createLocalVue} from '@vue/test-utils';
+import {mount, createLocalVue, Wrapper} from '@vue/test-utils';
+import Vue, {VNode} from "vue";
 
-import IsInvalidDirective from "../src/Vue/IsInvalidDirective.js";
-import Errors from "../src/Errors.js";
+import IsInvalidDirective from "../src/Vue/IsInvalidDirective";
+import Errors from "../src/Errors";
 
 const localVue = createLocalVue()
 localVue.directive('invalid', IsInvalidDirective)
 
-const InputComponent = {
+const InputComponent = Vue.extend({
   name: 'EmailInput',
   data() {
     return {
@@ -15,7 +16,7 @@ const InputComponent = {
       })
     }
   },
-  render(el) {
+  render(el): VNode {
     return el('input', {
       domProps: {
         name: 'email',
@@ -27,12 +28,12 @@ const InputComponent = {
       }]
     })
   }
-};
+});
 
 describe('Is-Invalid Directive', () => {
 
   test('can add/remove class to input', async () => {
-    const wrapper = mount(InputComponent, {
+    const wrapper: Wrapper<any> = mount(InputComponent, {
       localVue
     });
     await wrapper.vm.$nextTick();

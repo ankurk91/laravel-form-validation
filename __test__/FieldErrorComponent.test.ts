@@ -1,11 +1,11 @@
-import {mount} from '@vue/test-utils';
+import {mount, Wrapper} from '@vue/test-utils';
 
-import FieldErrorComponent from "../src/Vue/FieldErrorComponent.js";
-import Errors from "../src/Errors.js";
+import FieldErrorComponent from "../src/Vue/FieldErrorComponent";
+import Errors from "../src/Errors";
 
 describe('Field Error Component', () => {
 
-  let wrapper;
+  let wrapper: Wrapper<any>;
 
   beforeEach(() => {
     wrapper = mount(FieldErrorComponent, {
@@ -22,7 +22,6 @@ describe('Field Error Component', () => {
 
   afterEach(() => {
     wrapper.destroy();
-    wrapper = null;
   });
 
   test('is a Vue instance', () => {

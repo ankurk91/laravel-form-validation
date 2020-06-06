@@ -1,10 +1,10 @@
-import Form from '../src/Form.js';
-import Errors from '../src/Errors.js';
+import Form from '../src/Form';
+import Errors from '../src/Errors';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
-let $form;
-let $mockAdapter;
+let $form: Form;
+let $mockAdapter: MockAdapter;
 
 describe('Form class', () => {
 
@@ -39,7 +39,7 @@ describe('Form class', () => {
   });
 
   it('transforms the data to a FormData object if there is a File', async () => {
-    const file = new File([new Uint8Array(10000)], {type: 'image/png'});
+    const file = new File([new Uint8Array(10000)], 'test.png');
 
     const data = {
       email: 'john@example.com',
@@ -53,7 +53,7 @@ describe('Form class', () => {
     };
 
     $mockAdapter.onPost('http://localhost/profile')
-      .reply(request => {
+      .reply((request: any) => {
         expect(request.data).toBeInstanceOf(FormData);
         expect(request.data.get('email')).toBe('john@example.com');
         expect(request.data.get('profile[name]')).toBe('John D');

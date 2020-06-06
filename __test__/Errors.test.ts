@@ -1,6 +1,6 @@
-import Errors from '../src/Errors.js';
+import Errors from '../src/Errors';
 
-let $errors;
+let $errors: Errors;
 
 describe('Errors class', () => {
 
