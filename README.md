@@ -101,8 +101,8 @@ export default {
 
 ## API
 You can take a look at individual classes and their methods
-* [Form](./src/Form.js)
-* [Errors](./src/Errors.js)
+* [Form](./src/Form.ts)
+* [Errors](./src/Errors.ts)
 
 ## Vue.js helpers
 This package comes with two helpers to work with [bootstrap css](https://getbootstrap.com/docs/4.1/components/forms/#how-it-works)
