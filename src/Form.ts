@@ -1,7 +1,7 @@
 import axios, {AxiosError, AxiosRequestConfig, AxiosResponse, Method} from 'axios';
 import Errors from './Errors';
 import {hasFile} from "./Util";
-import {objectToFormData} from 'object-to-formdata';
+import {serialize} from 'object-to-formdata';
 
 class Form {
 
@@ -93,7 +93,7 @@ class Form {
     this.$pending = true;
 
     if (hasFile(formData)) {
-      formData = objectToFormData(formData, {
+      formData = serialize(formData, {
         indices: true,
         booleansAsIntegers: true
       });
