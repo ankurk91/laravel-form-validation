@@ -46,7 +46,7 @@
     "cross-env": "^7.0.2",
     "jest": "^26.0.1",
     "ts-jest": "^26.1.0",
-    "ts-loader": "^7.0.5",
+    "ts-loader": "^8.0.1",
     "typescript": "^3.9.5",
     "unminified-webpack-plugin": "^2.0.0",
     "vue": "^2.6.11",
