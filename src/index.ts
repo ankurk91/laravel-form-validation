@@ -7,7 +7,7 @@ import {VueConstructor} from "vue";
 const VueFormPlugin = {
   install(Vue: VueConstructor) {
     Vue.directive('invalid', IsInvalidDirective);
-    Vue.component(FieldErrorComponent.name, FieldErrorComponent);
+    Vue.component('field-error', FieldErrorComponent);
   }
 }
 
