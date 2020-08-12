@@ -113,7 +113,7 @@ import {VueFormPlugin} from "laravel-form-validation";
 Vue.use(VueFormPlugin)
 ```
 ### IsInvalid directive
-Setup global directive
+Setup global directive manually
 ```js
 import { IsInvalidDirective } from 'laravel-form-validation';
 Vue.directive('invalid', IsInvalidDirective);
@@ -124,7 +124,7 @@ Use on form inputs, you must specify `name` attribute on your input fields
 ```
 
 ### FieldError component
-Setup global component
+Setup global component manually
 ```js
 import { FieldErrorComponent } from 'laravel-form-validation';
 Vue.component(FieldErrorComponent.name, FieldErrorComponent);

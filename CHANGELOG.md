@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.1.2](https://github.com/ankurk91/laravel-form-validation/compare/1.1.1..1.1.2)
+* Fix `field-error` component registration
+
 ## [1.1.1](https://github.com/ankurk91/laravel-form-validation/compare/1.1.0..1.1.1)
 * Internal: Rewrite in TS
 * Build: provide `dist/esm/` files to support tree shaking
