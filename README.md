@@ -127,7 +127,7 @@ Use on form inputs, you must specify `name` attribute on your input fields
 Setup global component manually
 ```js
 import { FieldErrorComponent } from 'laravel-form-validation';
-Vue.component(FieldErrorComponent.name, FieldErrorComponent);
+Vue.component('field-error', FieldErrorComponent);
 ```
 Use in forms to show validation message for specific field
 ```html
