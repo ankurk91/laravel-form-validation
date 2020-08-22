@@ -35,7 +35,7 @@
     "prepublishOnly": "yarn run test && yarn run build"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.20.0",
     "object-to-formdata": "^4.0.1"
   },
   "devDependencies": {
