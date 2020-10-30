@@ -8,7 +8,7 @@
 [![codecov](https://codecov.io/gh/ankurk91/laravel-form-validation/branch/master/graph/badge.svg)](https://codecov.io/gh/ankurk91/laravel-form-validation)
 ![ts](https://badgen.net/badge/Built%20With/TypeScript/blue)
 
-This package make use of AJAX to validate your form with backend logic.
+This package make use of AJAX to validate your forms with backend logic.
 
 ## Installation
 ```bash
@@ -106,7 +106,7 @@ You can take a look at individual classes and their methods
 * [Errors](./src/Errors.ts)
 
 ## Vue.js helpers
-This package comes with two helpers to work with [bootstrap css](https://getbootstrap.com/docs/4.1/components/forms/#how-it-works)
+This package comes with two helpers to work with [bootstrap css](https://getbootstrap.com/docs/4.5/components/forms/#how-it-works)
 ### Register in one shot
 You can register the component and directive
 ```js

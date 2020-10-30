@@ -1,6 +1,6 @@
 {
   "name": "laravel-form-validation",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Yet another form validation helper for Laravel",
   "main": "dist/index.umd.js",
   "module": "dist/esm/index.js",
