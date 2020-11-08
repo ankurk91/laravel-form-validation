@@ -1,15 +1,12 @@
-import Vue, {VNode, PropType} from 'vue'
+import {h, defineComponent, PropType} from 'vue'
 import Errors from "../Errors";
 
-export default Vue.extend({
+export default defineComponent({
   name: 'FieldError',
-  render(el: any): VNode {
-    return this.hasError ? el('div', {
-      class: this.className,
-      domProps: {
-        innerText: this.message
-      },
-    }) : null
+  render() {
+    return this.hasError ? h('div', {
+      class: this.className
+    },`${this.message}`) : null
   },
   props: {
     bag: {

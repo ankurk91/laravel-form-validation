@@ -1,7 +1,4 @@
 module.exports = {
-  setupFiles: [
-    "<rootDir>/__test__/setup.ts"
-  ],
   collectCoverage: true,
   testURL: "http://localhost",
   transform: {

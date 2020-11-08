@@ -16,4 +16,3 @@ export default ($el: any, binding: any) => {
     $el.classList.remove('is-invalid')
   }
 }
-

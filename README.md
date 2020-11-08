@@ -10,6 +10,11 @@
 
 This package make use of AJAX to validate your forms with backend logic.
 
+| Vue.js version | Package version | Branch          |
+| :---           | :---:           | ---:           | 
+| 2.x            | 1.x             | [1.x](https://github.com/ankurk91/laravel-form-validation/tree/v1.x) |
+| 3.x            | 2.x             | master          |
+
 ## Installation
 ```bash
 # yarn
@@ -111,13 +116,13 @@ This package comes with two helpers to work with [bootstrap css](https://getboot
 You can register the component and directive
 ```js
 import {VueFormPlugin} from "laravel-form-validation";
-Vue.use(VueFormPlugin)
+app.use(VueFormPlugin)
 ```
 ### IsInvalid directive
 Setup global directive manually
 ```js
 import { IsInvalidDirective } from 'laravel-form-validation';
-Vue.directive('invalid', IsInvalidDirective);
+app.directive('invalid', IsInvalidDirective);
 ```
 Use on form inputs, you must specify `name` attribute on your input fields
 ```html
@@ -128,7 +133,7 @@ Use on form inputs, you must specify `name` attribute on your input fields
 Setup global component manually
 ```js
 import { FieldErrorComponent } from 'laravel-form-validation';
-Vue.component('field-error', FieldErrorComponent);
+app.component('field-error', FieldErrorComponent);
 ```
 Use in forms to show validation message for specific field
 ```html
