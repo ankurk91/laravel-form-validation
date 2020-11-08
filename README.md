@@ -20,7 +20,7 @@ npm install laravel-form-validation
 ```
 
 ## Usage
-An example using Vue.js 2.x and Bootstrap v4.x
+An example using Vue.js and Bootstrap v4.x
 ```html
 <template>
     <form @submit.prevent="submit">
