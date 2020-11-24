@@ -13,14 +13,14 @@ This package make use of AJAX to validate your forms with backend logic.
 ## Installation
 ```bash
 # yarn
-yarn add laravel-form-validation
+yarn add laravel-form-validation@^1.0
 
 # npm
-npm install laravel-form-validation 
+npm install laravel-form-validation@^1.0 
 ```
 
 ## Usage
-An example using Vue.js and Bootstrap v4.x
+An example using Vue.js v2.x and Bootstrap v4.x
 ```html
 <template>
     <form @submit.prevent="submit">
