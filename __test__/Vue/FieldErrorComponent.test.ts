@@ -8,7 +8,7 @@ describe('Field Error Component', () => {
   let wrapper: any;
 
   beforeEach(() => {
-    wrapper = mount(defineComponent({extends: FieldErrorComponent}), {
+    wrapper = mount(FieldErrorComponent, {
       propsData: {
         field: 'email',
         bag: new Errors({
