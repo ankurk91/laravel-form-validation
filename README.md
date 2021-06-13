@@ -27,7 +27,7 @@ npm install laravel-form-validation
 
 ## Usage
 
-An example using Vue.js and Bootstrap v4.x
+An example using Vue.js v3.x and Bootstrap v4.x
 
 ```html
 
@@ -119,7 +119,7 @@ You can take a look at individual classes and their methods
 ## Vue.js helpers
 
 This package comes with two helpers to work
-with [bootstrap css](https://getbootstrap.com/docs/4.5/components/forms/#how-it-works)
+with [bootstrap css](https://getbootstrap.com/docs/4.6/components/forms/#how-it-works)
 
 ### Register in one shot
 
@@ -167,14 +167,13 @@ Use in forms to show validation message for specific field
 ## Customize `axios` instance (optional)
 
 The package uses [axios](https://github.com/axios/axios) for making AJAX requests, you can pass your own axios instance
-and Form class will start using it.
+and the `Form` class will start using it.
 
 ```js
 // app.js
 import axios from 'axios';
 import Form from 'laravel-form-validation';
 // Make your modifications
-axios.defaults.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 Form.$defaults.axios = axios;
 ```

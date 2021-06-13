@@ -1,4 +1,4 @@
-import Errors from "../Errors";
+import Errors from '../Errors';
 
 export default ($el: any, binding: any) => {
   /**

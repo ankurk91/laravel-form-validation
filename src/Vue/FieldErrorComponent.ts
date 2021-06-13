@@ -1,5 +1,5 @@
 import {h, defineComponent, PropType} from 'vue'
-import Errors from "../Errors";
+import Errors from '../Errors';
 
 export default defineComponent({
   name: 'FieldError',
