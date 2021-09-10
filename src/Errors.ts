@@ -49,6 +49,23 @@ class Errors {
   }
 
   /**
+   * Get the first error from matching key
+   *
+   * @param fieldPattern
+   */
+  firstWhere(fieldPattern: string): String | null {
+    const foundKey = Object.keys(this.all()).find(
+      f => f.startsWith(`${fieldPattern}.`) || f.startsWith(`${fieldPattern}[`)
+    );
+
+    if (foundKey) {
+      return this.first(foundKey);
+    }
+
+    return null;
+  }
+
+  /**
    * Get all of the messages from the bag for a given key.
    *
    * @param {String} field

@@ -81,6 +81,22 @@ describe('Errors class', () => {
     expect($errors.first('first_name')).toEqual('Field is required');
   });
 
+  it('can get first() error for the given field pattern', () => {
+    $errors.record({
+      'profile.first_name': ['Field is required'],
+      'profile.last_name': ['Field is required'],
+      'dates.0.start_date': ['Field is required'],
+      'dates.1.start_date': ['Field is required'],
+      'roles[0].name': ['Field is required'],
+      'roles[1].name': ['Field is required'],
+    });
+
+    expect($errors.firstWhere('first_name')).toBeFalsy();
+    expect($errors.firstWhere('dates')).toEqual('Field is required');
+    expect($errors.firstWhere('roles')).toEqual('Field is required');
+    expect($errors.firstWhere('roles[1]')).toEqual('Field is required');
+  });
+
   it('can clear() all errors of the given key having a dot (.) or [', () => {
     $errors.record({
       'profile.first_name': ['Field is required'],
