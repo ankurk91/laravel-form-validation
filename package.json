@@ -39,7 +39,7 @@
     "object-to-formdata": "^4.1.0"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.23",
+    "@types/jest": "^27.0.3",
     "@vue/test-utils": "^2.0.0-rc.17",
     "axios-mock-adapter": "^1.19.0",
     "cross-env": "^7.0.3",
