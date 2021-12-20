@@ -190,7 +190,7 @@ This package is highly inspired by various other similar implementations:
 
 * This package is using [Jest](https://github.com/facebook/jest) for testing.
 * Tests can be found in `__test__` folder.
-* Execute tests with this command `yarn test`
+* Execute tests with this command `npm test`
 
 ## License
 

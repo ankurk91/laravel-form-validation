@@ -28,21 +28,20 @@
   "homepage": "https://github.com/ankurk91/laravel-form-validation",
   "scripts": {
     "test": "jest",
-    "test:watch": "yarn run test --watch --notify",
+    "test:watch": "npm run test --watch --notify",
     "build:esm": "tsc -m es6 --outDir ./dist/esm",
     "build:umd": "cross-env NODE_ENV=production webpack --mode=production",
     "build": "npm run build:umd && npm run build:esm",
-    "prepublishOnly": "yarn run test && yarn run build"
+    "prepublishOnly": "npm run test && npm run build"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.24.0",
     "object-to-formdata": "^4.1.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
-    "@vue/test-utils": "^2.0.0-rc.6",
+    "@vue/test-utils": "^2.0.0-rc.17",
     "axios-mock-adapter": "^1.19.0",
-    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "cross-env": "^7.0.3",
     "jest": "^27.0.4",
     "ts-jest": "^27.0.3",
@@ -52,7 +51,9 @@
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
   "engines": {
     "node": ">=10.13"
   }
