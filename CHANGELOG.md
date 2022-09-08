@@ -3,7 +3,7 @@
 ## [2.0.0](https://github.com/ankurk91/laravel-form-validation/compare/1.1.2..2.0.0)
 
 * Add support for Vue v3.x
-* You can still use v1.x of this package with Vue 2.x
+* You can still use `v1.x` of this package with Vue `v2.x`
 
 ## [1.2.0](https://github.com/ankurk91/laravel-form-validation/compare/1.1.4..1.2.0)
 

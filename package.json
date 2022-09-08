@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@types/jest": "^27.4.1",
-    "@vue/test-utils": "^2.0.0-rc.21",
+    "@vue/test-utils": "^2.0",
     "axios-mock-adapter": "^1.19.0",
     "cross-env": "^7.0.3",
     "jest": "^27.0.4",
