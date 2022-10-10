@@ -3,6 +3,9 @@ import Errors from '../Errors';
 
 export default defineComponent({
   name: 'FieldError',
+  compatConfig: {
+    MODE: 3,
+  },
   render() {
     return this.hasError ? h('div', {
       class: this.className
