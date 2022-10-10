@@ -5,9 +5,9 @@ import IsInvalidDirective from "./Vue/IsInvalidDirective";
 import {App} from "vue";
 
 const VueFormPlugin = {
-  install(Vue: App) {
-    Vue.directive('invalid', IsInvalidDirective);
-    Vue.component('field-error', FieldErrorComponent);
+  install(app: App) {
+    app.directive('invalid', IsInvalidDirective);
+    app.component('field-error', FieldErrorComponent);
   }
 }
 

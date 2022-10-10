@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.0](https://github.com/ankurk91/laravel-form-validation/compare/2.0.0..2.1.0)
+
+* Allow `axios` v1.x
+* Add `@vue/compat` config to component
+* Add `firstWhere` method to `Errors` class
+
 ## [2.0.0](https://github.com/ankurk91/laravel-form-validation/compare/1.1.2..2.0.0)
 
 * Add support for Vue v3.x

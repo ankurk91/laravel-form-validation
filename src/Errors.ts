@@ -12,7 +12,7 @@ class Errors {
   }
 
   /**
-   * Get all of the messages in the bag.
+   * Get all the messages in the bag.
    *
    * @return {object}
    */
@@ -66,7 +66,7 @@ class Errors {
   }
 
   /**
-   * Get all of the messages from the bag for a given key.
+   * Get all the messages from the bag for a given key.
    *
    * @param {String} field
    * @returns {Array}
