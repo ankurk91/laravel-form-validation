@@ -1,4 +1,4 @@
-import axios, {AxiosError, AxiosRequestConfig, AxiosResponse, Method} from 'axios';
+import axios, {AxiosError, AxiosRequestConfig, AxiosResponse} from 'axios';
 import Errors from './Errors';
 import {hasFile} from "./Util";
 import {serialize} from 'object-to-formdata';
@@ -146,8 +146,9 @@ class Form {
    */
   onFail(error: AxiosError) {
     /* istanbul ignore else */
-    if (error.response && error.response.status === 422) {
-      this.$errors.record(error.response.data.errors);
+    if (error.response?.status === 422) {
+      const json = error.response.data as any;
+      this.$errors.record(json.errors);
     }
   }
 }
