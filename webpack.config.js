@@ -13,7 +13,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.runtime.esm.js'
     },
-    extensions: ['.js', '.json', '.vue', '.tsx', '.ts']
+    extensions: ['.js', '.json', '.tsx', '.ts']
   },
   entry: {
     'index.umd': './src/index.ts',

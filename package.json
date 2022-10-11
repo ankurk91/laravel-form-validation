@@ -7,7 +7,8 @@
   "typings": "dist/types/index.d.ts",
   "files": [
     "src",
-    "dist"
+    "dist",
+    "types"
   ],
   "repository": {
     "type": "git",
@@ -28,11 +29,11 @@
   "homepage": "https://github.com/ankurk91/laravel-form-validation",
   "scripts": {
     "test": "jest",
-    "test:watch": "yarn run test --watch --notify",
+    "test:watch": "npm run test --watch --notify",
     "build:esm": "tsc -m es6 --outDir ./dist/esm",
     "build:umd": "cross-env NODE_ENV=production webpack --mode production",
     "build": "npm run build:umd && npm run build:esm",
-    "prepublishOnly": "yarn run test && yarn run build"
+    "prepublishOnly": "npm run test && npm run build"
   },
   "dependencies": {
     "axios": "^1.1.2",
