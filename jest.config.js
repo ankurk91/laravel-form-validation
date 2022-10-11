@@ -1,9 +1,16 @@
 module.exports = {
+  testEnvironment: 'jsdom',
   setupFiles: [
     "<rootDir>/__test__/setup.ts"
   ],
   collectCoverage: true,
-  testURL: "http://localhost",
+  testEnvironmentOptions: {
+    testURL: 'http://localhost',
+    customExportConditions: [
+      'node',
+      'node-addons',
+    ],
+  },
   transform: {
     "^.+\\.tsx?$": "ts-jest"
   },

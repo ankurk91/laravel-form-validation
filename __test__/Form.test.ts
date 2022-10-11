@@ -31,7 +31,7 @@ describe('Form class', () => {
 
     try {
       await $form.post('http://localhost/signup');
-    } catch (e) {
+    } catch (e: any) {
       expect(e.response.status).toBe(422)
     }
 
