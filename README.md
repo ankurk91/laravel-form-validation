@@ -2,18 +2,18 @@
 
 [![downloads](https://badgen.net/npm/dt/laravel-form-validation)](https://npm-stat.com/charts.html?package=laravel-form-validation&from=2019-01-01)
 [![npm-version](https://badgen.net/npm/v/laravel-form-validation)](https://www.npmjs.com/package/laravel-form-validation)
-[![github-tag](https://badgen.net/github/tag/ankurk91/laravel-form-validation)](https://github.com/ankurk91/laravel-form-validation/)
+[![github-tag](https://badgen.net/github/tag/ankurk91/laravel-form-validation)](https://github.com/ankurk91/laravel-form-validation/tags)
 [![license](https://badgen.net/github/license/ankurk91/laravel-form-validation)](https://yarnpkg.com/en/package/laravel-form-validation)
 [![tests](https://github.com/ankurk91/laravel-form-validation/workflows/tests/badge.svg)](https://github.com/ankurk91/laravel-form-validation/actions)
-[![codecov](https://codecov.io/gh/ankurk91/laravel-form-validation/branch/master/graph/badge.svg)](https://codecov.io/gh/ankurk91/laravel-form-validation)
+[![codecov](https://codecov.io/gh/ankurk91/laravel-form-validation/branch/main/graph/badge.svg)](https://codecov.io/gh/ankurk91/laravel-form-validation)
 ![ts](https://badgen.net/badge/Built%20With/TypeScript/blue)
 
 This package make use of AJAX to validate your forms with backend logic.
 
-| Vue.js version | Package version | Branch          |
-| :---           | :---:           | ---:           | 
+| Vue.js version | Package version |                                                               Branch |
+| :---           | :---:           |---------------------------------------------------------------------:| 
 | 2.x            | 1.x             | [1.x](https://github.com/ankurk91/laravel-form-validation/tree/v1.x) |
-| 3.x            | 2.x             | master          |
+| 3.x            | 2.x             |                                                                 main |
 
 ## Installation
 
