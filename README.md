@@ -13,7 +13,7 @@ This package make use of AJAX to validate your forms with backend logic.
 ## Installation
 
 ```bash
-npm install laravel-form-validation@^1.0 
+npm install laravel-form-validation@^1
 ```
 
 ## Usage
