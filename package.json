@@ -35,22 +35,22 @@
     "prepublishOnly": "npm run test && npm run build"
   },
   "dependencies": {
-    "axios": "^1.4.0",
+    "axios": "^1.6.7",
     "object-to-formdata": "^4.5.1"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.1",
-    "@vue/test-utils": "^2.3.2",
-    "axios-mock-adapter": "^1.21.4",
+    "@types/jest": "^29.5.12",
+    "@vue/test-utils": "^2.4.4",
+    "axios-mock-adapter": "^1.22.0",
     "cross-env": "^7.0.3",
-    "jest": "^29.5.0",
-    "jest-environment-jsdom": "^29.5.0",
-    "ts-jest": "^29.1.0",
-    "ts-loader": "^9.4.3",
-    "typescript": "^5.0.4",
-    "vue": "^3.3.4",
-    "webpack": "^5.84.1",
-    "webpack-cli": "^5.1.1"
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.2",
+    "vue": "^3.4.21",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
